@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Reading List Application | Manik Kukkar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>📚 Book Reading Tracker</h1>
+      <p class="subtitle">Personal Library & Reading Goals · Developed by Manik Kukkar</p>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num" id="stat-total">0</span>
+          <span class="stat-label">Total Books</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" id="stat-completed">0</span>
+          <span class="stat-label">Completed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" id="stat-reading">0</span>
+          <span class="stat-label">Reading</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" id="stat-wishlist">0</span>
+          <span class="stat-label">Want to Read</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="form-section">
+        <h2>Add New Book</h2>
+        <form id="book-form" class="book-form">
+          <div class="input-group">
+            <label for="book-title">Book Title</label>
+            <input type="text" id="book-title" placeholder="e.g. Clean Code" required>
+          </div>
+          <div class="input-group">
+            <label for="book-author">Author</label>
+            <input type="text" id="book-author" placeholder="e.g. Robert C. Martin" required>
+          </div>
+          <div class="input-group">
+            <label for="book-genre">Genre / Category</label>
+            <input type="text" id="book-genre" placeholder="e.g. Software Engineering" required>
+          </div>
+          <div class="input-group">
+            <label for="book-status">Status</label>
+            <select id="book-status">
+              <option value="reading">Currently Reading</option>
+              <option value="completed">Completed</option>
+              <option value="wishlist">Want to Read</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-add">Add to Collection</button>
+        </form>
+      </section>
+
+      <section class="list-section">
+        <div class="filter-controls">
+          <button class="filter-tab active" data-filter="all">All Books</button>
+          <button class="filter-tab" data-filter="reading">Reading</button>
+          <button class="filter-tab" data-filter="completed">Completed</button>
+          <button class="filter-tab" data-filter="wishlist">Wishlist</button>
+        </div>
+
+        <div id="book-list" class="book-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
